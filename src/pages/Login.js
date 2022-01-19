@@ -3,6 +3,7 @@ import { withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import actionSaveUserEmail from '../actions';
+import './Login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -53,7 +54,7 @@ class Login extends React.Component {
     const { handleChange, handleClick } = this;
     const { isButtonDisabled } = this.state;
     return (
-      <div>
+      <div className="login-container">
         <label
           htmlFor="user-email-input"
         >
