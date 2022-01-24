@@ -1,9 +1,8 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router';
 import { connect } from 'react-redux';
 import { PropTypes } from 'prop-types';
 import actionSaveUserEmail from '../actions';
-import './Login.css';
 
 class Login extends React.Component {
   constructor() {
@@ -54,30 +53,37 @@ class Login extends React.Component {
     const { handleChange, handleClick } = this;
     const { isButtonDisabled } = this.state;
     return (
-      <div className="login-container">
-        <label
-          htmlFor="user-email-input"
-        >
-          E-mail:
-          <input
-            data-testid="email-input"
-            type="text"
-            name="email"
-            onChange={ handleChange }
-          />
-        </label>
-        <label
-          htmlFor="user-password-input"
-        >
-          Password:
-          <input
-            data-testid="password-input"
-            type="password"
-            name="password"
-            onChange={ handleChange }
-          />
-        </label>
+      <div className="flex flex-col items-center">
+        <h1 className="text-7xl mt-10 text-white bg-green-700 px-20 py-10 rounded-lg">
+          TRYBE
+          <spam className="text-7xl text-black">WALLET</spam>
+        </h1>
+        <label className="mt-10 ml-4" htmlFor="user-email-input">Email:</label>
+        <input
+          className="mt-1 ml-4 flex w-3/5 px-3 py-2 bg-white border border-slate-300
+            rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500
+            focus:ring-1 focus:ring-green-500"
+          data-testid="email-input"
+          placeholder="Insert your E-mail here"
+          type="text"
+          name="email"
+          onChange={handleChange}
+        />
+        <label className="mt-5 ml-4" htmlFor="user-password-input">Password:</label>
+        <input
+          className="mt-1 ml-4 flex w-3/5 px-3 py-2 bg-white border border-slate-300
+            rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500
+            focus:ring-1 focus:ring-green-500"
+          data-testid="password-input"
+          placeholder="Insert your password here"
+          type="password"
+          name="password"
+          onChange={handleChange}
+        />
         <button
+          className="mt-5 bg-green-500 w-20 mx-auto py-1 rounded-md
+            text-white shadow-md shadow-grey-500 hover:shadow-xl hover:shadow-grey-500
+              hover:bg-green-600"
           disabled={ isButtonDisabled }
           onClick={ handleClick }
           type="button"
