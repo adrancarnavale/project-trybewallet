@@ -5,25 +5,40 @@ import { PropTypes } from 'prop-types';
 class WalletHeader extends Component {
   render() {
     const { userEmail, totalExpenses } = this.props;
+    const myClass = "text-xl text-white";
+    const spamClass = "mr-1 text-lightgreen";
     return (
-      <div>
-        <p
-          data-testid="email-field"
-        >
-          E-mail:
-          {userEmail}
-        </p>
-        <p
-          data-testid="total-field"
-        >
-          Despesa Total:
-          { totalExpenses }
-        </p>
-        <p
-          data-testid="header-currency-field"
-        >
-          Moeda Utilizada: BRL
-        </p>
+      <div className="w-full bg-trybe flex flex-col items-center py-4 px-3">
+        <div className={myClass}>
+          <p
+            data-testid="email-field"
+          >
+            <spam className={ spamClass }>
+              E-mail:
+            </spam>
+            {userEmail}
+          </p>
+        </div>
+        <div className={ myClass }>
+          <p
+            data-testid="total-field"
+          >
+            <spam className={ spamClass }>
+              Despesa Total:
+            </spam>
+            { totalExpenses }
+          </p>
+        </div>
+        <div className={ myClass }>
+          <p
+            data-testid="header-currency-field"
+          >
+            <spam className={ spamClass }>
+              Moeda Utilizada:
+            </spam>
+            BRL
+          </p>
+        </div>
       </div>
     );
   }

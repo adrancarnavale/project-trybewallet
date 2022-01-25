@@ -35,18 +35,18 @@ class WalletChart extends Component {
     const { handleDeleteButtonClick, handleEditButtonClick } = this;
     const { expensesInfos } = this.props;
     return (
-      <div>
-        <table>
-          <thead>
-            <th>Descrição</th>
-            <th>Tag</th>
-            <th>Método de pagamento</th>
-            <th>Valor</th>
-            <th>Moeda</th>
-            <th>Câmbio utilizado</th>
-            <th>Valor convertido</th>
-            <th>Moeda de conversão</th>
-            <th>Editar/Excluir</th>
+      <div className="p-4 w-full flex flex-col items-center">
+        <table className="table-auto w-11/12 border border-trybe">
+          <thead className="table-row">
+            <th className="table-cell text-center text-xl border border-trybe hover:bg-slate-200">Descrição</th>
+            <th className="table-cell text-center border text-xl border-trybe hover:bg-slate-200">Tag</th>
+            <th className="table-cell text-center border text-xl border-trybe hover:bg-slate-200">Método de pagamento</th>
+            <th className="table-cell text-center border text-xl border-trybe hover:bg-slate-200">Valor</th>
+            <th className="table-cell text-center border text-xl border-trybe hover:bg-slate-200">Moeda</th>
+            <th className="table-cell text-center border text-xl border-trybe hover:bg-slate-200">Câmbio utilizado</th>
+            <th className="table-cell text-center border text-xl border-trybe hover:bg-slate-200">Valor convertido</th>
+            <th className="table-cell text-center border text-xl border-trybe hover:bg-slate-200">Moeda de conversão</th>
+            <th className="table-cell text-center border text-xl border-trybe hover:bg-slate-200">Editar/Excluir</th>
           </thead>
           <tbody>
             {
@@ -62,30 +62,32 @@ class WalletChart extends Component {
                 }, index) => (
                   <tr
                     key={ index }
+                    className="table-row"
                   >
-                    <td>{description}</td>
-                    <td>{tag}</td>
-                    <td>{method}</td>
-                    <td>{value}</td>
-                    <td>
+                    <td className="table-cell text-center border border-trybe hover:bg-green-200">{description}</td>
+                    <td className="table-cell text-center border border-trybe hover:bg-green-200">{tag}</td>
+                    <td className="table-cell text-center border border-trybe hover:bg-green-200">{method}</td>
+                    <td className="table-cell text-center border border-trybe hover:bg-green-200">{value}</td>
+                    <td className="table-cell text-center border border-trybe hover:bg-green-200">
                       {
                         exchangeRates[currency].name.split('/')[0]
                       }
                     </td>
-                    <td>
+                    <td className="table-cell text-center border border-trybe hover:bg-green-200">
                       {
                         Number(exchangeRates[currency].ask).toFixed(2)
                       }
                     </td>
-                    <td>
+                    <td className="table-cell text-center border border-trybe hover:bg-red-200">
                       {
                         (value * exchangeRates[currency].ask)
                           .toFixed(2)
                       }
                     </td>
-                    <td>Real</td>
-                    <td>
+                    <td className="table-cell text-center border border-trybe hover:bg-green-200">Real</td>
+                    <td className="table-cell text-center border border-trybe hover:bg-slate-200">
                       <button
+                        className="p-1 bg-lightgreen text-trybe hover:bg-trybe hover:text-white rounded-lg my-1 mx-1"
                         type="button"
                         data-testid="edit-btn"
                         onClick={ handleEditButtonClick }
@@ -94,6 +96,7 @@ class WalletChart extends Component {
                         Editar
                       </button>
                       <button
+                        className="p-1 bg-red-500 text-white hover:bg-red-700 rounded-lg my-1 mx-1"
                         type="button"
                         data-testid="delete-btn"
                         onClick={ handleDeleteButtonClick }

@@ -49,14 +49,17 @@ class WalletForm extends Component {
     const { handleSubmitClick, handleChange } = this;
     const { value, description, currency, method, tag } = this.state;
     const { currenciesList } = this.props;
+    const inputStyles = "ml-1 rounded-lg border-1 border-solid border-slate-500 focus:border focus:border-solid focus:border-trybe";
     return (
-      <div>
-        <form>
+      <div className="p-4">
+        <form className=" p-4 flex flex-col border-4 border-solid border-trybe rounded-lg hover:shadow-lg hover:shadow-lightgreen">
           <label
+            className="text-lg mx-auto"
             htmlFor="value-input"
           >
             Valor:
             <input
+              className={ inputStyles }
               type="number"
               data-testid="value-input"
               id="value-input"
@@ -66,10 +69,12 @@ class WalletForm extends Component {
             />
           </label>
           <label
+            className="text-lg mt-4 mx-auto"
             htmlFor="description-input"
           >
             Descrição:
             <input
+              className={ inputStyles }
               type="text"
               data-testid="description-input"
               id="description-input"
@@ -80,9 +85,11 @@ class WalletForm extends Component {
           </label>
           <label
             htmlFor="currency-input"
+            className="text-lg mt-4 mx-auto"
           >
             Moeda:
             <select
+              className={ inputStyles }
               data-testid="currency-input"
               id="currency-input"
               onChange={ handleChange }
@@ -103,9 +110,11 @@ class WalletForm extends Component {
           </label>
           <label
             htmlFor="method-input"
+            className="text-lg mt-4 mx-auto"
           >
             Método de Pagamento:
             <select
+              className={ inputStyles }
               data-testid="method-input"
               id="method-input"
               onChange={ handleChange }
@@ -118,10 +127,12 @@ class WalletForm extends Component {
             </select>
           </label>
           <label
+            className="text-lg mt-4 mx-auto"
             htmlFor="tag-input"
           >
             Categoria:
             <select
+              className={ inputStyles }
               data-testid="tag-input"
               id="tag-input"
               onChange={ handleChange }
@@ -136,6 +147,7 @@ class WalletForm extends Component {
             </select>
           </label>
           <button
+            className="mt-4 text-sm bg-lightgreen w-32 text-trybe px-2 py-1 mx-auto rounded-lg shadow-lg hover:bg-trybe hover:text-lightgreen hover:shadow-xl"
             type="submit"
             onClick={ handleSubmitClick }
           >

@@ -58,30 +58,34 @@ class Login extends React.Component {
           TRYBE
           <spam className="text-7xl text-black">WALLET</spam>
         </h1>
-        <label className="mt-10 ml-4" htmlFor="user-email-input">Email:</label>
-        <input
-          className="mt-1 ml-4 flex w-3/5 px-3 py-2 bg-white border border-slate-300
-            rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500
-            focus:ring-1 focus:ring-green-500"
-          data-testid="email-input"
-          placeholder="Insert your E-mail here"
-          type="text"
-          name="email"
-          onChange={handleChange}
-        />
-        <label className="mt-5 ml-4" htmlFor="user-password-input">Password:</label>
-        <input
-          className="mt-1 ml-4 flex w-3/5 px-3 py-2 bg-white border border-slate-300
-            rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500
-            focus:ring-1 focus:ring-green-500"
-          data-testid="password-input"
-          placeholder="Insert your password here"
-          type="password"
-          name="password"
-          onChange={handleChange}
-        />
+        <div className="w-1/2 flex flex-col items-start">
+          <label className="text-lg ml-8 mt-10 ml-4" htmlFor="user-email-input">Email:</label>
+          <input
+            className="w-full mt-1 ml-4 flex px-3 py-2 bg-white border border-slate-300
+              rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500
+              focus:ring-1 focus:ring-green-500"
+            data-testid="email-input"
+            placeholder="Insert your E-mail here"
+            type="text"
+            name="email"
+            onChange={handleChange}
+          />
+        </div>
+        <div className="w-1/2 flex flex-col items-start">
+          <label className="text-lg ml-8 mt-5 ml-4" htmlFor="user-password-input">Password:</label>
+          <input
+            className=" w-full mt-1 ml-4 flex px-3 py-2 bg-white border border-slate-300
+              rounded-md text-sm shadow-sm placeholder-slate-400 focus:outline-none focus:border-green-500
+              focus:ring-1 focus:ring-green-500"
+            data-testid="password-input"
+            placeholder="Insert your password here"
+            type="password"
+            name="password"
+            onChange={handleChange}
+          />
+        </div>
         <button
-          className="mt-5 bg-green-500 w-20 mx-auto py-1 rounded-md
+          className="disabled:bg-slate-500 disabled:shadow-md disabled:shadow-grey-500 disabled:hover:bg-slate-600 disabled:hover:shadow-xl disabled:hover:shadow-grey-500 mt-5 bg-green-500 w-20 mx-auto py-1 rounded-md
             text-white shadow-md shadow-grey-500 hover:shadow-xl hover:shadow-grey-500
               hover:bg-green-600"
           disabled={ isButtonDisabled }

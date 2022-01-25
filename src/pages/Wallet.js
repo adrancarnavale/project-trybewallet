@@ -10,14 +10,14 @@ class Wallet extends React.Component {
   render() {
     const { stateInfoId, stateInfoClicked } = this.props;
     const mainComponent = (
-      <div>
+      <div className="flex flex-col items-center">
         <WalletHeader />
         <WalletForm />
         <WalletChart />
       </div>
     );
     const auxComponent = (
-      <div>
+      <div className="flex flex-col items-center">
         <WalletHeader />
         <WalletEditForm position={ stateInfoId } />
       </div>
