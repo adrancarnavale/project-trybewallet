@@ -3,9 +3,9 @@
 Project developed studying in [Trybe](https://www.betrybe.com/).
 
 ### Technologies and tools used
-- Jest
-- React Testing Library
-- userEvent Library
+- React
+- Redux
+- Tailwind
 
 ### Project objective
 
